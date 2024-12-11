@@ -1,9 +1,6 @@
 package C01Basic;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class C11QueStackDeque {
     public static void main(String[] args) {
@@ -54,15 +51,15 @@ public class C11QueStackDeque {
 //        long endTime4 = System.currentTimeMillis();
 //        System.out.println("ArrayList 조회속도 " + (endTime4-startTime4));
 
-        Queue<String> myQue = new LinkedList<>();
-        myQue.add("문서1");
-        myQue.add("문서2");
-        myQue.add("문서3");
-        while (!myQue.isEmpty()) {
-            System.out.println(myQue.peek());
-            System.out.println(myQue.poll());
-        }
-        System.out.println(myQue);
+//        Queue<String> myQue = new LinkedList<>();
+//        myQue.add("문서1");
+//        myQue.add("문서2");
+//        myQue.add("문서3");
+//        while (!myQue.isEmpty()) {
+//            System.out.println(myQue.peek());
+//            System.out.println(myQue.poll());
+//        }
+//        System.out.println(myQue);
 //
 ////        길이제한 Que : ArrayBlockingQueue
 //        Queue<String> blockingQue = new ArrayBlockingQueue<>(3);
@@ -93,11 +90,129 @@ public class C11QueStackDeque {
 //        백준 : 최소힙
 
 //        최대힙인 경우
-        Queue<Integer> maxPq = new PriorityQueue<>(Comparator.reverseOrder());
-        maxPq.add(30);
-        maxPq.add(10);
-        maxPq.add(20);
-        System.out.println(maxPq.poll());
+//        Queue<Integer> maxPq = new PriorityQueue<>(Comparator.reverseOrder());
+//        maxPq.add(30);
+//        maxPq.add(10);
+//        maxPq.add(20);
+//        System.out.println(maxPq.poll());
+
+//        더 맵게 - 프로그래머스
+//        int[] scoville = {1, 2, 3, 9, 10, 12};
+//        int k = 7;
+//        Queue<Integer> pq = new PriorityQueue<>();
+//        for (int s : scoville) {
+//            pq.add(s);
+//        }
+//        int answer = 0;
+//        while (pq.peek() < k) {
+//            if (pq.size() <= 1) {
+//                answer = -1;
+//                break;
+//            }
+//        }
+//        int temp1 = pq.poll();
+//        int temp2 = pq.poll();
+//        pq.add(temp1 + temp2 * 2);
+//        answer++;
+
+//        System.out.println(answer);
+
+//        stack
+//        Stack<Integer> st = new Stack<>();
+//        st.push(10);
+//        st.push(20);
+//        st.push(30);
+//        System.out.println(st.pop());   //30
+//        System.out.println(st.peek());   //20
+//        System.out.println(st.size());
+//        System.out.println(st.isEmpty());
+
+//        같은 숫자는 싫어
+//        방법1
+//        int[] arr = {1, 1, 3, 3, 0, 1, 1};
+//        Stack<Integer> st = new Stack<>();
+//
+//
+//        for (int i : arr) {
+//            if (st.isEmpty()) {
+//                st.push(i);
+//            } else {
+//                if (st.peek() != i) {
+//                    st.push(i);
+//                }
+//            }
+//        }
+//
+//        int[] answer = new int[st.size()];
+//        for (int i = answer.length - 1; i >= 0; i--) {
+//            answer[i] = st.pop();
+//        }
+
+//        방법2
+//        int[] arr = {1, 1, 3, 3, 0, 1, 1};
+//        int count = 0;
+//        int[] answer = new int[arr.length];
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            if (arr[i] != arr[i + 1]) {
+//                answer[count] = arr[i];
+//            }
+//        }
+//        answer[count] = arr[arr.length - 1];
+
+//        Deque : addFirst, addLast, pollFirst, pollLast
+//        Deque<Integer> d1 = new ArrayDeque<>();
+//        d1.addLast(10);
+//        d1.addLast(20);
+//        System.out.println(d1);
+//        d1.addFirst(30);
+//        System.out.println(d1);
+//        System.out.println(d1.peekFirst());
+//        System.out.println(d1.peekLast());
+//        System.out.println(d1.pollLast());
+//        System.out.println(d1.pollFirst());
+
+//        올바른 괄호
+
+        String s = "()()";
+
+        Deque<Character> dq = new ArrayDeque<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (dq.isEmpty()) {
+                dq.addLast(s.charAt(i));
+            } else {
+                if (dq.peekLast().equals("(") && dq.peekLast().equals(")")) {
+                    dq.pollLast();
+                } else {
+                    dq.addLast(s.charAt(i));
+                }
+            }
+        }
+        boolean answer = false;
+        if (dq.isEmpty()) {
+            answer = true;
+        }
+        System.out.println(answer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
