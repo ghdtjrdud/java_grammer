@@ -80,13 +80,13 @@ public class C08List {
 //        myList.add(30);
 
 //        contains : 값이 있는지 여부를 리턴
-        List<Integer> myList = new ArrayList<>();
-        myList.add(10);
-        myList.add(20);
-        myList.add(30);
-        if (myList.contains(10)) {
-            System.out.println("10이 있습니다");
-        }
+//        List<Integer> myList = new ArrayList<>();
+//        myList.add(10);
+//        myList.add(20);
+//        myList.add(30);
+//        if (myList.contains(10)) {
+//            System.out.println("10이 있습니다");
+//        }
 
 
 ////         indexOf : 가장먼저 나오는 값의 index return;
@@ -137,16 +137,16 @@ public class C08List {
 //        myList.get(2).add(400);
 
 //        리스트안에 배열
-        List<int[]> myList2 = new ArrayList<>();
-        myList2.add(new int[2]);    //10,20
-        myList2.get(0)[0]=10;
-        myList2.get(0)[1]=20;
-        myList2.add(new int[3]);    //100,200,300
-        myList2.get(1)[0] = 100;
-        myList2.get(1)[1] = 200;
-        myList2.get(1)[2] = 300;
-        myList2.add(new int[]{1, 2});
-        myList2.add(new int[]{1, 2, 3, 4});
+//        List<int[]> myList2 = new ArrayList<>();
+//        myList2.add(new int[2]);    //10,20
+//        myList2.get(0)[0]=10;
+//        myList2.get(0)[1]=20;
+//        myList2.add(new int[3]);    //100,200,300
+//        myList2.get(1)[0] = 100;
+//        myList2.get(1)[1] = 200;
+//        myList2.get(1)[2] = 300;
+//        myList2.add(new int[]{1, 2});
+//        myList2.add(new int[]{1, 2, 3, 4});
 
 
 
