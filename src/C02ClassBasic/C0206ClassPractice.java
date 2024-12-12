@@ -11,6 +11,7 @@ public class C0206ClassPractice {
         List<Acount> acounts = new ArrayList<>();
         Acount a1 = new Acount("111111", 100000);
         Acount a2 = new Acount("222222", 100000);
+
         acounts.add(a1);
         acounts.add(a2);
 //        계좌번호 목록조회
@@ -41,6 +42,9 @@ public class C0206ClassPractice {
         myAccount.setBalance(myAccount.getBalance()-50000);
         yourAccount.setBalance(yourAccount.getBalance()+50000);
 
+        System.out.println(map.get("1234").getBalance());
+        System.out.println(map.get("1234").getAcnumber());
+
 
     }
 }
@@ -65,6 +69,9 @@ class Acount {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
+
+
 }
 
 

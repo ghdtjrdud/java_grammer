@@ -5,7 +5,7 @@ public class C0205Constructor {
 
         //    캘린더 객체 생성 후 연도, 월, 일 세팅(setter 사용)
         Calendar c1 = new Calendar(2024, 12, 11);
-        
+
 //        데이터의 안정성을 위해 일반적으로 setter를 사용하지 않음
 //        c1.setYear(2024);
 //        c1.setMonth(12);
@@ -13,7 +13,7 @@ public class C0205Constructor {
 
         //    캘린더 객체출력 : 오늘은 ㅇㅇㅇ연도, ㅇ월 ㅇㅇ일 입니다.(getter사용)
 
-        System.out.println("오늘은 " + c1.getYear() + "년 " + c1.getMonth() + "월 " + c1.getDay()+ "일");
+//        System.out.println("오늘은 " + c1.getYear() + "년 " + c1.getMonth() + "월 " + c1.getDay()+ "일");
 
 
     }
