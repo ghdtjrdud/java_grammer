@@ -22,6 +22,17 @@ public class BoardService {
                     String name = sc.nextLine();
                     System.out.println("이메일을 입력하시오.");
                     String email = sc.nextLine();
+                    boolean isDuplicate = false;
+                    for (Author a : at) {
+                        if (a.getEmail().equals(email)) {
+                            System.out.println("중복된 이메일입니다. 다시입력하세요");
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+                    if (isDuplicate) {
+                        continue;
+                    }
                     System.out.println("비밀번호 입력하시오");
                     String pass = sc.nextLine();
 
@@ -33,8 +44,8 @@ public class BoardService {
 //        2.회원 전체 목록 조회 : id, email
                 case 2:
                     for (Author a : at) {
-                        System.out.print(a.getId()+"\t");
-                        System.out.println(a.getEmail());
+                        System.out.print("id : "+a.getId()+"\t");
+                        System.out.println("email : " + a.getEmail());
                     }
                     break;
 
@@ -45,10 +56,10 @@ public class BoardService {
                     int count = 0;
                     for (Author a : at) {
                         if (a.getId() == id) {
-                            System.out.println(a.getId());
-                            System.out.println(a.getEmail());
-                            System.out.println(a.getName());
-                            System.out.println(a.getPass());
+                            System.out.println("id : "+a.getId());
+                            System.out.println("email : "+a.getEmail());
+                            System.out.println("name : "+a.getName());
+                            System.out.println("pass : "+a.getPass());
                         }
                         for (Post p : ps) {
                             if (p.getAuthor().equals(a)) {
@@ -57,7 +68,7 @@ public class BoardService {
                         }
 
                     }
-                    System.out.println(count);
+                    System.out.println("작성글 수 : "+count);
 
                     break;
 
@@ -80,17 +91,17 @@ public class BoardService {
                     Post p1 = new Post(title, contents, author);
                     ps.add(p1);
 
-                    System.out.println(title);
-                    System.out.println(contents);
-                    System.out.println(author.getId());
-                    System.out.println(p1.getId());
+                    System.out.println("제목 : "+title);
+                    System.out.println("내용 : "+contents);
+                    System.out.println("작가 id : "+author.getId());
+                    System.out.println("게시물 id : "+p1.getId());
                     break;
 
 //        5.게시물 목록 조회 : id(post), title   for문?
                 case 5:
                     for (Post p : ps) {
-                        System.out.print(p.getId()+ "\t");
-                        System.out.println(p.getTitle());
+                        System.out.print("id : "+p.getId()+ "\t");
+                        System.out.println("제목 : "+p.getTitle());
                     }
                     break;
 //        6.게시물 상세 조회 : id(post), title, contents, 작성자email
@@ -104,6 +115,9 @@ public class BoardService {
                                 System.out.println(p.getId());
                                 System.out.println(p.getTitle());
                                 System.out.println(p.getContent());
+                                if (a.getId() == p.getAuthor().getId()) {
+                                    System.out.println(a.getEmail());
+                                }
                             }
                         }
                     }
