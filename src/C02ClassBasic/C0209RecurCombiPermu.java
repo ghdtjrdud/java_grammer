@@ -35,9 +35,9 @@ public class C0209RecurCombiPermu {
         myList.add(4);
         List<List<Integer>> answer = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
-//        combi(answer, temp, myList, 2, 0);
-        answer = new ArrayList<>();
-        permu(answer, temp, myList, 2, new boolean[myList.size()]);
+        combi(answer, temp, myList, 2, 0);
+//        answer = new ArrayList<>();
+//        permu(answer, temp, myList, 2, new boolean[myList.size()]);
         System.out.println(answer);
 
     }
